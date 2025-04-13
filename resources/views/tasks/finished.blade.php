@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container">
-    <h1 class="mb-4">✅ Tugas yang Sudah Selesai</h1>
+    <h1 class="mb-4"> Tugas Terselesaikan</h1>
 
-    <a href="{{ route('task.index') }}" class="btn btn-secondary mb-3">🔙 Kembali ke Semua Tugas</a>
+    <a href="{{ route('task.index') }}" class="btn btn-secondary mb-3">Kembali ke Semua Tugas</a>
 
     <table class="table table-hover table-bordered">
         <thead class="table-success">

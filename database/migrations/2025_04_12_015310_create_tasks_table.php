@@ -17,6 +17,7 @@ return new class extends Migration
             $table->boolean('status')->default(false);
             $table->string('priority')->default('Medium');
             $table->date('date');
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }

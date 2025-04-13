@@ -31,12 +31,14 @@ class TaskController extends Controller
             'name' => 'required',
             'date' => 'required|date',
             'priority' => 'required|in:High,Medium,Low',
+            'notes' => 'nullable|string',
         ]);
 
         Task::create([
             'name' => $request->name,
             'date' => $request->date,
             'priority' => $request->priority,
+            'notes' => $request->notes,
             'status' => false,
         ]);
 
@@ -57,12 +59,14 @@ class TaskController extends Controller
             'name' => 'required',
             'date' => 'required|date',
             'priority' => 'required|in:High,Medium,Low',
+            'notes' => 'nullabe|string',
         ]);
 
         $task->update([
             'name' => $request->name,
             'date' => $request->date,
             'priority' => $request->priority,
+            'notes' => $request->notes,
         ]);
 
         return redirect()->back();
@@ -77,6 +81,6 @@ class TaskController extends Controller
     public function destroy(Task $task)
     {
         $task->delete();
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Tugas berhasil dihapus!');
     }
 }
